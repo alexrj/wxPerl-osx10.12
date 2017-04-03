@@ -33,5 +33,6 @@ $(BUILD)/wxPerl.app/Contents/MacOS/wxPerl: $(BUILD)/wxPerl.app/Contents/MacOS
 	gcc -o $@ $(ARCH_FLAGS) main.c
 
 $(BUILD)/wxPerl.app/Contents/Resources/wxPerl.rsrc: $(BUILD)/wxPerl.app/Contents/Resources
-	$(RESTOOLDIR)/Rez -d __DARWIN__ -useDF -o $(BUILD)/wxPerl.rsrc $(ARCH_FLAGS) wxPerl.r
-	$(RESTOOLDIR)/ResMerger -dstIs DF $(BUILD)/wxPerl.rsrc -o $@
+	echo "Skipping Rez call"
+	#$(RESTOOLDIR)/Rez -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Headers/ -F /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Carbon.framework/Versions/A/Headers -d __DARWIN__ -useDF -o $(BUILD)/wxPerl.rsrc $(ARCH_FLAGS) wxPerl.r
+	#$(RESTOOLDIR)/ResMerger -dstIs DF $(BUILD)/wxPerl.rsrc -o $@
